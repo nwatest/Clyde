@@ -62,7 +62,7 @@ def onliner(token, status):
                         "name": "status_online",
                         "id": "1198123809300021288",
                         "animated": False,
-                    #},
+                    },
                 }
             ],
             "status": status,
