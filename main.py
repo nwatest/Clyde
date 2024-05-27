@@ -59,9 +59,9 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": "status_online",
-                        "id": "1198123809300021288",
-                        "animated": False,
+                        "name": "sparkles",
+                        "id": "1198125172985692201",
+                        "animated": True,
                     },
                 }
             ],
