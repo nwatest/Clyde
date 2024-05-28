@@ -59,8 +59,8 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": "blurpleCheck",
-                        "id": "1198149081470619821",
+                        "name": "online",
+                        "id": "1198148835432734840",
                         "animated": False,
                     },
                 }
