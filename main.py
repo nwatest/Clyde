@@ -58,11 +58,11 @@ def onliner(token, status):
                     "name": "Custom Status",
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
-                    # "emoji": {
-                        # "name": "ver_blue",
-                        # "id": "1198125186394898432",
-                        # "animated": True,
-                    # },
+                    "emoji": {
+                        "name": "ver_blue",
+                        "id": "1268796880834396270",
+                        "animated": True,
+                    },
                 }
             ],
             "status": status,
