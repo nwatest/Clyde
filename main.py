@@ -60,9 +60,9 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": "blob_gift",
-                        "id": "1268795359409471529",
-                        "animated": True,
+                        "name": "noob_cool",
+                        "id": "1030206813909561404",
+                        "animated": False,
                     },
                 }
             ],
