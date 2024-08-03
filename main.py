@@ -11,6 +11,13 @@ status = os.getenv("status") #online/dnd/idle
 custom_status = os.getenv("custom_status") #If you don't need a custom status on your profile, just put "" instead of "youtube.com/@SealedSaucer"
 
 usertoken = os.getenv("token")
+
+name = os.getenv("name")
+
+id = os.getenv("id")
+
+anim = os.getenv("anim")
+
 if not usertoken:
     print("[ERROR] Please add a token inside Secrets.")
     sys.exit()
@@ -59,9 +66,9 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": os.getenv("name"),
-                        "id": os.getenv("id"),
-                        "animated": os.getenv("anim"),
+                        "name": name,
+                        "id": id,
+                        "animated": anim,
                     },
                 }
             ],
