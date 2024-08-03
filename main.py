@@ -1,3 +1,5 @@
+Whats wrong with this code, the emoji dotn work
+
 import os
 import sys
 import json
@@ -6,12 +8,11 @@ import requests
 import websocket
 from keep_alive import keep_alive
 
-status = os.getenv("status", "online")  # Default to "online" if not set
-custom_status = os.getenv("custom_status", "")
+status = os.getenv("status") #online/dnd/idle
+
+custom_status = os.getenv("custom_status") #If you don't need a custom status on your profile, just put "" instead of "youtube.com/@SealedSaucer"
+
 usertoken = os.getenv("token")
-name = os.getenv("name")
-emoji_id = os.getenv("id")
-anim = os.getenv("anim", "false").lower() == "true"
 
 if not usertoken:
     print("[ERROR] Please add a token inside Secrets.")
@@ -24,7 +25,7 @@ if validate.status_code != 200:
     print("[ERROR] Your token might be invalid. Please check it again.")
     sys.exit()
 
-userinfo = validate.json()
+userinfo = requests.get("https://canary.discordapp.com/api/v9/users/@me", headers=headers).json()
 username = userinfo["username"]
 discriminator = userinfo["discriminator"]
 userid = userinfo["id"]
@@ -49,34 +50,30 @@ def onliner(token, status):
         "t": None,
     }
     ws.send(json.dumps(auth))
-    
-    emoji_data = {
-        "name": name,
-        "id": emoji_id,
-        "animated": anim,
-    } if name and emoji_id else None
-    
-    activities = [{
-        "type": 4,
-        "state": custom_status,
-        "name": "Custom Status",
-        "id": "custom",
-        "emoji": emoji_data
-    }] if custom_status else []
-    
     cstatus = {
         "op": 3,
         "d": {
             "since": 0,
-            "activities": activities,
+            "activities": [
+                {
+                    "type": 4,
+                    "state": custom_status,
+                    "name": "Custom Status",
+                    "id": "custom",
+                    #Uncomment the below lines if you want an emoji in the status
+                    "emoji": {
+                        "name": typing,
+                        "id": 1246637428345667709,
+                        "animated": True,
+                    },
+                }
+            ],
             "status": status,
             "afk": False,
         },
     }
-    
-    print(f"Sending status update: {json.dumps(cstatus, indent=4)}")
     ws.send(json.dumps(cstatus))
-    online = {"op": 1, "d": None}
+    online = {"op": 1, "d": "None"}
     time.sleep(heartbeat / 1000)
     ws.send(json.dumps(online))
 
