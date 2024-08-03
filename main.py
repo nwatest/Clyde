@@ -1,5 +1,3 @@
-Whats wrong with this code, the emoji dotn work
-
 import os
 import sys
 import json
@@ -62,8 +60,8 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": typing,
-                        "id": 1246637428345667709,
+                        "name": "blob_gift",
+                        "id": "1268795359409471529",
                         "animated": True,
                     },
                 }
