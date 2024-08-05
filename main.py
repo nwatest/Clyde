@@ -60,8 +60,8 @@ def onliner(token, status):
                     "id": "custom",
                     #Uncomment the below lines if you want an emoji in the status
                     "emoji": {
-                        "name": "checkmark",
-                        "id": "1257166702328811571",
+                        "name": ":status_idle",
+                        "id": "1257126839772778611",
                         "animated": False,
                     },
                 }
